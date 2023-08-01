@@ -1,13 +1,12 @@
 -- https://www.hackerrank.com/challenges/earnings-of-employees/problem
 
 select * from(
-select max_earn , count(0)
-from
-(
-select months*salary max_earn from employee   
-) 
-group by max_earn
-order by 1 desc
-    )
+    select Total_Earnings , count(0) from
+    (
+        select months*salary Total_Earnings from employee   
+    ) 
+    group by Total_Earnings
+    order by Total_Earnings desc
+)
 where rownum=1
 ;
